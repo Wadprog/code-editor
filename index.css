@@ -1,0 +1,165 @@
+/* Please see the article */
+
+#editor,
+#highlighting,
+#highlighting * {
+  font-size: 15pt;
+  font-family: monospace;
+  line-height: 20pt;
+  tab-size: 2;
+}
+#highlighting {
+  background: black;
+}
+
+#editor,
+#highlighting {
+  margin: 10px;
+  padding: 10px;
+  border: 0;
+  width: calc(100% - 32px);
+  height: 150px;
+  /* In the same place */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*Scrolling */
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#editor {
+  z-index: 1;
+  color: transparent;
+  background: transparent;
+  caret-color: white;
+  resize: none;
+}
+#highlighting {
+  z-index: 0;
+}
+
+/* Prism csshttps://gist.github.com/salmanulkhair/c36361f74cb74c9b1b06c0e521757bfe*/
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 0.4em 0.8em;
+  margin: 0.5em 0;
+  overflow: auto;
+  background: green; /* - WebCoder49 */
+}
+
+code[class*='language-'] {
+  background: black;
+  color: white;
+  box-shadow: -0.3em 0 0 0.3em black, 0.3em 0 0 0.3em black;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.2em;
+  border-radius: 0.3em;
+  box-shadow: none;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #aaa;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #0cf;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: yellow;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.token.variable,
+.token.inserted {
+  color: yellowgreen;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: deeppink;
+}
+
+.token.regex,
+.token.important {
+  color: orange;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: red;
+}
+
+/* Plugin styles: Diff Highlight */
+pre.diff-highlight.diff-highlight > code .token.deleted:not(.prefix),
+pre > code.diff-highlight.diff-highlight .token.deleted:not(.prefix) {
+  background-color: rgba(255, 0, 0, 0.3);
+  display: inline;
+}
+
+pre.diff-highlight.diff-highlight > code .token.inserted:not(.prefix),
+pre > code.diff-highlight.diff-highlight .token.inserted:not(.prefix) {
+  background-color: rgba(0, 255, 128, 0.3);
+  display: inline;
+}
+
+/* End of prism.js syntax highlighting*/
